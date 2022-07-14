@@ -21,6 +21,11 @@
     const DEFAULT_WAGER = 100;
     const DEFAULT_WALLET = 500;
 
+
+    // flag proposed by student Oscar Avery
+    // to check to make certain that
+    // wallet update process is complete
+    // before beginning new round
     let WALLET_UPDATING = false;
 
     // not a constant because this will change
