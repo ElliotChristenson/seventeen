@@ -21,6 +21,8 @@
     const DEFAULT_WAGER = 100;
     const DEFAULT_WALLET = 500;
 
+    let WALLET_UPDATING = false;
+
     // not a constant because this will change
     // not part of "game" or another object
     // because the wallet should last beyond a single game
@@ -73,8 +75,10 @@
             dollar_count = 0;
         }
         let wallet_refill = setInterval(function () {
+            WALLET_UPDATING = true;
             if (dollar_count === player_wallet) {
                 clearInterval(wallet_refill);
+                WALLET_UPDATING = false;
                 return;
             }
 
@@ -87,7 +91,7 @@
 
             // display on page the dollars
             updateByID("player_wallet", "$" + dollar_count);
-        }, 1);
+        }, 1);   
     }
 
     // function that returns a Card object
@@ -630,10 +634,13 @@
     updateWallet();
 
     byID("new_game_button").addEventListener("click", function () {
-        GAME.walletMsg("");
-        GAME.newGameButtons(false);
-        GAME.startRound(); // reset the game
-        GAME.score(); // update and display score
+        if (!WALLET_UPDATING) {
+            GAME.walletMsg("");
+            GAME.newGameButtons(false);
+            GAME.startRound(); // reset the game
+            GAME.score(); // update and display score 
+        }
+
     });
 
     byID("hit_button").addEventListener("click", function () {
