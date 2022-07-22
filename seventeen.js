@@ -409,7 +409,7 @@
             });
 
             updateByID("player_wallet", "$" + player_wallet);
-            my.newGameButtons(false);
+            
 
             // get, check and set valid player wager
             my.getWager();
@@ -460,7 +460,9 @@
             setTimeout(function () {
                 show(_player_images[1]);
             }, 2000);
-
+            setTimeout(function () {
+                my.newGameButtons(false);
+            }, 2500);
         };
 
         // pass in a "hand" array - either dealer or player to get total!
@@ -641,22 +643,21 @@
     byID("new_game_button").addEventListener("click", function () {
         if (!WALLET_UPDATING) {
             GAME.walletMsg("");
-            GAME.newGameButtons(false);
-            GAME.startRound(); // reset the game
-            GAME.score(); // update and display score 
+            GAME.startRound();
+            GAME.score();
         }
 
     });
 
     byID("hit_button").addEventListener("click", function () {
-        GAME.hit(); // make this work!
-        GAME.score(); // update and display score
-        GAME.bust(); // make this work!
+        GAME.hit();
+        GAME.score();
+        GAME.bust();
     });
 
     byID("stand_button").addEventListener("click", function () {
-        GAME.stand(); // make this work!
-        GAME.score(); // update and display score
-        GAME.winner(); // make this work!
+        GAME.stand();
+        GAME.score();
+        GAME.winner();
     });
 }());
