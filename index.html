@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Seventeen</title>
+
+        <!-- this line is to include the FontAwesome icon set -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+
+        <!-- This is how the web page knows about YOUR CSS file! -->
+        <link rel="stylesheet" type="text/css" href="seventeen.css"/>
+    </head>
+
+    <body>
+        <div id="gameboard">
+            <h1 id="title">Seventeen</h1>
+            <h3 id="player_wallet">$500</h3>
+            <h3 id="wallet_message">&nbsp;</h3>
+            <h3 id="cards_header">Cards Left:
+                <span id="cards_left">&nbsp;</span>
+            </h3>
+            <div id="dealer">
+                <h2>Dealer Score:
+                <span id="dealer_score">&nbsp;</span></h2>
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+            </div>
+            <div id="player">
+                <h2>Player Score:
+                <span id="player_score">&nbsp;</span></h2>
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+                <img class="card-image" src="card-images/blank-card.png" alt="seventeen card">
+            </div>
+            <div id="controls">
+                <button id="new_game_button">New</button>
+                <button id="stand_button">Stand</button>
+                <button id="hit_button">Hit</button>
+                <h2 id="game_message">&nbsp;</h2>
+                <div id="game_instructions">
+                    <p>Click the New button to deal a new hand. Click the Hit button to draw another card. Click the Stand button to finish the game.</p>
+                </div>
+            </div>
+            <div id="wager">
+                <label for="wager_field">Wager $</label>
+                <input name="wager_field" type="number" id="wager_field" value="100" step="10">
+            </div>
+        </div>
+        <audio id="coins-sound">
+          <source src="audio/coins.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="card-sound">
+          <source src="audio/card.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="deal-sound">
+          <source src="audio/deal.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="draw-sound">
+          <source src="audio/draw.mp3" type="audio/mpeg">
+        </audio>
+        <script src="seventeen.js"></script>
+    </body>
+</html>
